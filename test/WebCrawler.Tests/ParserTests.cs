@@ -28,6 +28,7 @@ public class UnitTest1
             Assert.Fail(e.Message);
         }
 
+        Assert.True(true);
         Parser parser = new Parser(html);
         Assert.Equal(title, parser.ExtractTitle());
     }
