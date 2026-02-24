@@ -17,6 +17,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="../../src/WebCrawler/WebCrawler.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets/AbrahamLincoln.html" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 
