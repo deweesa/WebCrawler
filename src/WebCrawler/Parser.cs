@@ -56,6 +56,7 @@ public class Parser
             }
         });
 
+        //? Should we select random links here if we have a max out links? This would be more robust than just taking the first n links, which could be biased in some way.
         if (maxOutLinks != -1 && linkedPages.Count > maxOutLinks)
         {
             linkedPages = linkedPages.Take(maxOutLinks).ToHashSet(); //todo: this is also a bit hacky, maybe we should be doing something more robust here?

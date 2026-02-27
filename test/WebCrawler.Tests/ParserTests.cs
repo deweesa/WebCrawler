@@ -11,7 +11,7 @@ public class ParserTests
     // - [ ] testing for bad pages
     // - [ ] testing for pages with no links
 
-    //Unit tests noted with Real in the title are tests ran against html files pulled from the wiki, more as integration testing
+    //* Unit tests noted with Real in the title are tests ran against html files pulled from the wiki, more as integration testing
     [Fact]
     public void ShouldGetTitleFromRealPage()
     {
