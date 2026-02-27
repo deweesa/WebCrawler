@@ -11,6 +11,7 @@ by some sort of orchestrator class that will make the calls to the web.
 //todo: instantiating class should give what it thinks the title should be, for logging purposes.
 public class Parser
 {
+    //! Should we be so attribute happy?
     private string pageHtml = string.Empty;
     public string pageTitle = string.Empty;
     private int prefixLength = "/wiki/".Length; 
