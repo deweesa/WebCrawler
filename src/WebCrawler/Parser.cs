@@ -8,13 +8,11 @@ Class responsible for parsing html from the wiki pages. Life cycle will be intia
 by some sort of orchestrator class that will make the calls to the web.
 </summary>
 */
-//todo: what does a link node look like?
-// - obv they're a tags
-// - they all have /wiki/ in the href
+//todo: instantiating class should give what it thinks the title should be, for logging purposes.
 public class Parser
 {
-    private string pageHtml;
-    public string pageTitle;
+    private string pageHtml = string.Empty;
+    public string pageTitle = string.Empty;
     private int prefixLength = "/wiki/".Length; 
     private HtmlDocument pageDocument;
     public HashSet<string> linkedPages;
@@ -66,6 +64,11 @@ public class Parser
     public void ParseTitle()
     {
         HtmlNode titleElement  = pageDocument.DocumentNode.SelectSingleNode("//span[@class='mw-page-title-main']");
-        pageTitle = titleElement?.InnerText; //todo: handle null case, this only works for well formed title nodes
+        if (titleElement == null)
+        {
+            Console.WriteLine("Title element not found in page html"); //todo: instantiating a logger would be better than writing to console, but this is fine for now
+            return;
+        }
+        pageTitle = titleElement.InnerText;
     }
 }
