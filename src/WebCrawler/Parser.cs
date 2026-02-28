@@ -34,7 +34,7 @@ public class Parser
         pageDocument = new HtmlDocument();
         pageDocument.LoadHtml(pageHtml);
         linkedPages = new HashSet<string>();
-        maxOutLinks = -1;
+        maxOutLinks = 5;
     }
 
     public void Parse()
