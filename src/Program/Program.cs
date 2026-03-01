@@ -1,8 +1,9 @@
 ﻿using System.CommandLine;
+using WebCrawler;
 
 class Program
 {
-    private static int Main(string[] args)
+    private static async Task<int> Main(string[] args)
     {
         Option<int> depthOption = new("depth", ["-d", "--depth"])
         {
@@ -33,6 +34,9 @@ class Program
             int breadth = parseResult.GetValue(breadthOption);
             string? page = parseResult.GetValue(pageOption);
         });
+
+        WorkerOrchestrator orchestrator = new WorkerOrchestrator();
+        await orchestrator.Crawl();
 
         ParseResult parseResult = rootCommand.Parse(args);
         return parseResult.Invoke();
