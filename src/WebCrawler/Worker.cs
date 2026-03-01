@@ -5,7 +5,6 @@ namespace WebCrawler;
 // ? I don't know if this is a good name
 public class Worker
 {
-    private Parser parser;
     private string linkTitle;
     private static string baseUrl = "https://en.wikipedia.org/wiki/";
     private readonly int currDepth;

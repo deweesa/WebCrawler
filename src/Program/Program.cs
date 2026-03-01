@@ -37,7 +37,6 @@ class Program
 
         WorkerOrchestrator orchestrator = new WorkerOrchestrator();
         await orchestrator.Crawl();
-        
 
         ParseResult parseResult = rootCommand.Parse(args);
         return parseResult.Invoke();
