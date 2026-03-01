@@ -35,8 +35,9 @@ class Program
             string? page = parseResult.GetValue(pageOption);
         });
 
-        Worker worker = new Worker("abraham_lincoln", 0);
-        await worker.DoWork();
+        WorkerOrchestrator orchestrator = new WorkerOrchestrator();
+        await orchestrator.Crawl();
+        
 
         ParseResult parseResult = rootCommand.Parse(args);
         return parseResult.Invoke();
