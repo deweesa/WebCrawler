@@ -1,4 +1,4 @@
-# Name of Project
+# WebCrawler
 
 <!-- ## Table of Contents
 
